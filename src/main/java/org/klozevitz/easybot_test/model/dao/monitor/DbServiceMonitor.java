@@ -23,7 +23,7 @@ public class DbServiceMonitor implements IDaoMonitor {
 
     @Override
     public List<Monitor> findAll() {
-        return null;
+        return (List<Monitor>) monitorRepo.findAll();
     }
 
     @Override

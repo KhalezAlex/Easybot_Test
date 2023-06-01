@@ -23,7 +23,7 @@ public class DbServiceHDD implements IDaoHDD {
 
     @Override
     public List<HDD> findAll() {
-        return null;
+        return (List<HDD>) hddRepo.findAll();
     }
 
     @Override

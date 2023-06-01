@@ -23,7 +23,7 @@ public class DbServiceLaptop implements IDaoLaptop{
 
     @Override
     public List<Laptop> findAll() {
-        return null;
+        return (List<Laptop>) laptopRepo.findAll();
     }
 
     @Override

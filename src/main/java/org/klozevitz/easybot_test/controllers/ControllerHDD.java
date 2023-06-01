@@ -3,10 +3,9 @@ package org.klozevitz.easybot_test.controllers;
 import lombok.RequiredArgsConstructor;
 import org.klozevitz.easybot_test.model.dao.hdd.IDaoHDD;
 import org.klozevitz.easybot_test.model.entities.HDD;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static org.klozevitz.easybot_test.util.Validations.*;
 
@@ -25,5 +24,10 @@ public class ControllerHDD {
             return new HDD();
         }
         return hddDao.save(new HDD(serial, brand, price, amount, volume));
+    }
+
+    @GetMapping("/all")
+    public List<HDD> findAll() {
+        return hddDao.findAll();
     }
 }

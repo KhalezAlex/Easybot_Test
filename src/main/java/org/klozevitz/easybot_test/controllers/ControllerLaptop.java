@@ -3,10 +3,9 @@ package org.klozevitz.easybot_test.controllers;
 import lombok.RequiredArgsConstructor;
 import org.klozevitz.easybot_test.model.dao.laptop.IDaoLaptop;
 import org.klozevitz.easybot_test.model.entities.Laptop;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static org.klozevitz.easybot_test.util.Validations.*;
 
@@ -25,5 +24,10 @@ public class ControllerLaptop {
             return new Laptop();
         }
         return laptopDao.save(new Laptop(serial, brand, price, amount, size));
+    }
+
+    @GetMapping("/all")
+    public List<Laptop> findAll() {
+        return laptopDao.findAll();
     }
 }

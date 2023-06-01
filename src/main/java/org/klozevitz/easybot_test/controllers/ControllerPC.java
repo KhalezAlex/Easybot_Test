@@ -5,6 +5,8 @@ import org.klozevitz.easybot_test.model.dao.pc.IDaoPC;
 import org.klozevitz.easybot_test.model.entities.PC;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.klozevitz.easybot_test.util.Validations.*;
 
 @RestController
@@ -22,5 +24,10 @@ public class ControllerPC {
             return new PC();
         }
         return pcDao.save(new PC(serial, brand, price, amount, form));
+    }
+
+    @GetMapping("/all")
+    public List<PC> findAll() {
+        return pcDao.findAll();
     }
 }
