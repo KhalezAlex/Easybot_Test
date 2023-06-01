@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class DBPCService implements IDaoPC {
+public class DbServicePC implements IDaoPC {
     private final IRepoPC pcRepo;
 
 
