@@ -30,4 +30,9 @@ public class ControllerPC {
     public List<PC> findAll() {
         return pcDao.findAll();
     }
+
+    @GetMapping("/findById")
+    public PC findById(int id) {
+        return pcDao.findById(id);
+    }
 }

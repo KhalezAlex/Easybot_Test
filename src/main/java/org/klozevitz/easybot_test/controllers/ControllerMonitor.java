@@ -30,4 +30,9 @@ public class ControllerMonitor {
     public List<Monitor> findAll(){
         return monitorDao.findAll();
     }
+
+    @GetMapping("/findById")
+    public Monitor findById(int id) {
+        return monitorDao.findById(id);
+    }
 }

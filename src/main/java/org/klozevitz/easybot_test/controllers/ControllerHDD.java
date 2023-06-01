@@ -30,4 +30,9 @@ public class ControllerHDD {
     public List<HDD> findAll() {
         return hddDao.findAll();
     }
+
+    @GetMapping("/findById")
+    public HDD findById(int id) {
+        return hddDao.findById(id);
+    }
 }

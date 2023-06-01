@@ -28,7 +28,7 @@ public class DbServiceMonitor implements IDaoMonitor {
 
     @Override
     public Monitor findById(int id) {
-        return null;
+        return monitorRepo.findById(id).orElse(new Monitor());
     }
 
     @Override

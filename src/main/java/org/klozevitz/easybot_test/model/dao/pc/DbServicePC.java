@@ -19,7 +19,7 @@ public class DbServicePC implements IDaoPC {
 
     @Override
     public PC update(PC pc) {
-        return pcRepo.save(pc);
+        return null;
     }
 
     @Override

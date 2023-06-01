@@ -28,7 +28,7 @@ public class DbServiceHDD implements IDaoHDD {
 
     @Override
     public HDD findById(int id) {
-        return null;
+        return hddRepo.findById(id).orElse(new HDD());
     }
 
     @Override

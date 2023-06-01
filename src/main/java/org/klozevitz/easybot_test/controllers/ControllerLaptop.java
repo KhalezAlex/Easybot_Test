@@ -30,4 +30,9 @@ public class ControllerLaptop {
     public List<Laptop> findAll() {
         return laptopDao.findAll();
     }
+
+    @GetMapping("/findById")
+    public Laptop findById(int id) {
+        return laptopDao.findById(id);
+    }
 }

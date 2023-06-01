@@ -28,7 +28,7 @@ public class DbServiceLaptop implements IDaoLaptop{
 
     @Override
     public Laptop findById(int id) {
-        return null;
+        return laptopRepo.findById(id).orElse(new Laptop());
     }
 
     @Override
