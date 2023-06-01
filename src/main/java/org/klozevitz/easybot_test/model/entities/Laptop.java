@@ -3,7 +3,6 @@ package org.klozevitz.easybot_test.model.entities;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.klozevitz.easybot_test.model.Item;
 
 import javax.persistence.*;
 
@@ -12,22 +11,27 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "laptop_t")
-public class Laptop extends Item {
+public class Laptop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "serial", nullable = false, unique = true)
+    private Integer serial;
+    @Column(name = "brand", nullable = false)
+    private String brand;
+    @Column(name = "price", nullable = false)
+    private Double price;
+    @Column(name = "amount", nullable = false)
+    private Integer amount;
     @Column(name = "size", nullable = false)
     private Integer size;
 
-    public Laptop(Integer serial_number, String brand, Double price, Integer amount, Integer size) {
-        super(serial_number, brand, price, amount);
-        if (!isSizeValid(size)) {
-            throw new IllegalArgumentException();
-        }
+    public Laptop(Integer serial, String brand, Double price, Integer amount, Integer size) {
+        this.serial = serial;
+        this.brand = brand;
+        this.price = price;
+        this.amount = amount;
         this.size = size;
     }
 
-    private boolean isSizeValid(Integer size) {
-        return (size == 13 || size == 14 || size == 15 || size == 17);
-    }
 }

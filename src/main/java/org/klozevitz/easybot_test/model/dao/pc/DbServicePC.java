@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.klozevitz.easybot_test.model.entities.PC;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -14,21 +15,26 @@ public class DbServicePC implements IDaoPC {
 
     @Override
     public PC save(PC pc) {
-        return null;
+        return pcRepo.save(pc);
     }
 
     @Override
     public PC update(PC pc) {
-        return null;
+        return pcRepo.save(pc);
     }
 
     @Override
     public List<PC> findAll() {
-        return null;
+        return (LinkedList<PC>) pcRepo.findAll();
     }
 
     @Override
     public PC findById(int id) {
-        return null;
+        return pcRepo.findById(id).orElse(new PC());
+    }
+
+    @Override
+    public boolean isPresent(int serial) {
+        return pcRepo.findBySerial(serial).isPresent();
     }
 }

@@ -13,7 +13,7 @@ public class DbServiceMonitor implements IDaoMonitor {
 
     @Override
     public Monitor save(Monitor monitor) {
-        return null;
+        return monitorRepo.save(monitor);
     }
 
     @Override
@@ -29,5 +29,10 @@ public class DbServiceMonitor implements IDaoMonitor {
     @Override
     public Monitor findById(int id) {
         return null;
+    }
+
+    @Override
+    public boolean isPresent(int serial) {
+        return monitorRepo.findBySerial(serial).isPresent();
     }
 }

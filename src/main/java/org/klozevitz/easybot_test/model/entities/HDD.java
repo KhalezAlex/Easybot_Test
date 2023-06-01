@@ -3,7 +3,6 @@ package org.klozevitz.easybot_test.model.entities;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.klozevitz.easybot_test.model.Item;
 
 import javax.persistence.*;
 
@@ -12,22 +11,26 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "hdd_t")
-public class HDD extends Item {
+public class HDD {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "serial", nullable = false, unique = true)
+    private Integer serial;
+    @Column(name = "brand", nullable = false)
+    private String brand;
+    @Column(name = "price", nullable = false)
+    private Double price;
+    @Column(name = "amount", nullable = false)
+    private Integer amount;
     @Column(name = "volume", nullable = false)
     private Double volume;
 
-    public HDD(Integer serial_number, String brand, Double price, Integer amount, Double volume) {
-        super(serial_number, brand, price, amount);
-        if (!isVolumeValid(volume)) {
-            throw new IllegalArgumentException();
-        }
+    public HDD(Integer serial, String brand, Double price, Integer amount, Double volume) {
+        this.serial = serial;
+        this.brand = brand;
+        this.price = price;
+        this.amount = amount;
         this.volume = volume;
-    }
-
-    private boolean isVolumeValid(Double volume) {
-        return volume > 32;
     }
 }

@@ -13,7 +13,7 @@ public class DbServiceLaptop implements IDaoLaptop{
 
     @Override
     public Laptop save(Laptop laptop) {
-        return null;
+        return laptopRepo.save(laptop);
     }
 
     @Override
@@ -29,5 +29,10 @@ public class DbServiceLaptop implements IDaoLaptop{
     @Override
     public Laptop findById(int id) {
         return null;
+    }
+
+    @Override
+    public boolean isPresent(int serial) {
+        return laptopRepo.findBySerial(serial).isPresent();
     }
 }

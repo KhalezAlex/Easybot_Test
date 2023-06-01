@@ -13,7 +13,7 @@ public class DbServiceHDD implements IDaoHDD {
 
     @Override
     public HDD save(HDD hdd) {
-        return null;
+        return hddRepo.save(hdd);
     }
 
     @Override
@@ -29,5 +29,10 @@ public class DbServiceHDD implements IDaoHDD {
     @Override
     public HDD findById(int id) {
         return null;
+    }
+
+    @Override
+    public boolean isPresent(int serial) {
+        return hddRepo.findBySerial(serial).isPresent();
     }
 }

@@ -10,4 +10,5 @@ public interface IDaoDB<E> {
     E update(E e);
     List<E> findAll();
     E findById(int id);
+    boolean isPresent(int serial);
 }
