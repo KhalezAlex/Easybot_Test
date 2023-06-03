@@ -1,14 +1,15 @@
 package org.klozevitz.easybot_test.model.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+
+import static org.klozevitz.easybot_test.util.Validations.isFormValid;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "pc_t")
 public class PC {
@@ -32,5 +33,30 @@ public class PC {
         this.price = price;
         this.amount = amount;
         this.form = form;
+    }
+
+    public void update(PC pc) {
+        if (pc.getSerial() != null)
+            setSerial(pc.getSerial());
+        if (pc.getBrand() != null && !pc.getBrand().equals(""))
+            setBrand(pc.getBrand());
+        if (pc.getPrice() != null && pc.getPrice() > 0)
+            setPrice(pc.getPrice());
+        if (pc.getAmount() != null && pc.getAmount() >= 0)
+            setAmount(pc.getAmount());
+        if (pc.getForm() != null && isFormValid(pc.getForm()))
+            setForm(pc.getForm());
+    }
+
+    @Override
+    public String toString() {
+        return "PC{" +
+                "id=" + id +
+                ", serial=" + serial +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                ", form='" + form + '\'' +
+                '}';
     }
 }

@@ -18,7 +18,12 @@ public class DbServiceLaptop implements IDaoLaptop{
 
     @Override
     public Laptop update(Laptop laptop) {
-        return null;
+        Laptop laptopToUpdate = laptopRepo.findById(laptop.getId()).orElse(null);
+        if (laptopToUpdate == null) {
+            return new Laptop();
+        }
+        laptopToUpdate.update(laptop);
+        return laptopToUpdate;
     }
 
     @Override

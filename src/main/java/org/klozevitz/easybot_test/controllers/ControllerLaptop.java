@@ -35,4 +35,13 @@ public class ControllerLaptop {
     public Laptop findById(int id) {
         return laptopDao.findById(id);
     }
+
+    @PostMapping("/update")
+    public Laptop update(@RequestParam int id, @RequestParam(required = false) Integer serial,
+                     @RequestParam(required = false) String brand, @RequestParam(required = false) Double price,
+                     @RequestParam(required = false) Integer amount, @RequestParam(required = false) Integer size) {
+        if (laptopDao.findById(id) == null)
+            return new Laptop();
+        return laptopDao.update(new Laptop(id, serial, brand, price, amount, size));
+    }
 }

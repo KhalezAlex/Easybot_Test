@@ -1,14 +1,15 @@
 package org.klozevitz.easybot_test.model.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+
+import static org.klozevitz.easybot_test.util.Validations.isSizeValid;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "laptop_t")
 public class Laptop {
@@ -34,4 +35,28 @@ public class Laptop {
         this.size = size;
     }
 
+    public void update(Laptop laptop) {
+        if (laptop.getSerial() != null)
+            setSerial(laptop.getSerial());
+        if (laptop.getBrand() != null && !laptop.getBrand().equals(""))
+            setBrand(laptop.getBrand());
+        if (laptop.getPrice() != null && laptop.getPrice() > 0)
+            setPrice(laptop.getPrice());
+        if (laptop.getAmount() != null && laptop.getAmount() >= 0)
+            setAmount(laptop.getAmount());
+        if (laptop.getSize() != null && isSizeValid(laptop.getSize()))
+            setSize(laptop.getSize());
+    }
+
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "id=" + id +
+                ", serial=" + serial +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                ", size=" + size +
+                '}';
+    }
 }

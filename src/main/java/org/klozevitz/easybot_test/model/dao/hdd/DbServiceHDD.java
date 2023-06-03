@@ -18,7 +18,12 @@ public class DbServiceHDD implements IDaoHDD {
 
     @Override
     public HDD update(HDD hdd) {
-        return null;
+        HDD hddToUpdate = hddRepo.findById(hdd.getId()).orElse(null);
+        if (hddToUpdate == null) {
+            return new HDD();
+        }
+        hddToUpdate.update(hdd);
+        return hddToUpdate;
     }
 
     @Override

@@ -1,14 +1,15 @@
 package org.klozevitz.easybot_test.model.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+
+import static org.klozevitz.easybot_test.util.Validations.isVolumeValid;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "hdd_t")
 public class HDD {
@@ -32,5 +33,30 @@ public class HDD {
         this.price = price;
         this.amount = amount;
         this.volume = volume;
+    }
+
+    public void update(HDD hdd) {
+        if (hdd.getSerial() != null)
+            setSerial(hdd.getSerial());
+        if (hdd.getBrand() != null && !hdd.getBrand().equals(""))
+            setBrand(hdd.getBrand());
+        if (hdd.getPrice() != null && hdd.getPrice() > 0)
+            setPrice(hdd.getPrice());
+        if (hdd.getAmount() != null && hdd.getAmount() >= 0)
+            setAmount(hdd.getAmount());
+        if (hdd.getVolume() != null && isVolumeValid(hdd.getVolume()))
+            setVolume(hdd.getVolume());
+    }
+
+    @Override
+    public String toString() {
+        return "HDD{" +
+                "id=" + id +
+                ", serial=" + serial +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                ", volume=" + volume +
+                '}';
     }
 }

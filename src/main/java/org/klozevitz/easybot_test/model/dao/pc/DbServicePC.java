@@ -11,7 +11,6 @@ import java.util.List;
 public class DbServicePC implements IDaoPC {
     private final IRepoPC pcRepo;
 
-
     @Override
     public PC save(PC pc) {
         return pcRepo.save(pc);
@@ -19,7 +18,12 @@ public class DbServicePC implements IDaoPC {
 
     @Override
     public PC update(PC pc) {
-        return null;
+        PC pcToUpdate = pcRepo.findById(pc.getId()).orElse(null);
+        if (pcToUpdate == null) {
+            return new PC();
+        }
+        pcToUpdate.update(pc);
+        return pcToUpdate;
     }
 
     @Override

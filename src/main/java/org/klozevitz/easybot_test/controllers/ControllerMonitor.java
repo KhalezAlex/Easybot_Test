@@ -35,4 +35,13 @@ public class ControllerMonitor {
     public Monitor findById(int id) {
         return monitorDao.findById(id);
     }
+
+    @PostMapping("/update")
+    public Monitor update(@RequestParam int id, @RequestParam(required = false) Integer serial,
+                     @RequestParam(required = false) String brand, @RequestParam(required = false) Double price,
+                     @RequestParam(required = false) Integer amount, @RequestParam(required = false) Double diag) {
+        if (monitorDao.findById(id) == null)
+            return new Monitor();
+        return monitorDao.update(new Monitor(id, serial, brand, price, amount, diag));
+    }
 }

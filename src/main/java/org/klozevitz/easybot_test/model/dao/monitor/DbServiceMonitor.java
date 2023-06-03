@@ -18,7 +18,12 @@ public class DbServiceMonitor implements IDaoMonitor {
 
     @Override
     public Monitor update(Monitor monitor) {
-        return null;
+        Monitor monitorToUpdate = monitorRepo.findById(monitor.getId()).orElse(null);
+        if (monitorToUpdate == null) {
+            return new Monitor();
+        }
+        monitorToUpdate.update(monitor);
+        return monitorToUpdate;
     }
 
     @Override

@@ -35,4 +35,13 @@ public class ControllerHDD {
     public HDD findById(int id) {
         return hddDao.findById(id);
     }
+
+    @PostMapping("/update")
+    public HDD update(@RequestParam int id, @RequestParam(required = false) Integer serial,
+                     @RequestParam(required = false) String brand, @RequestParam(required = false) Double price,
+                     @RequestParam(required = false) Integer amount, @RequestParam(required = false) Double volume) {
+        if (hddDao.findById(id) == null)
+            return new HDD();
+        return hddDao.update(new HDD(id, serial, brand, price, amount, volume));
+    }
 }

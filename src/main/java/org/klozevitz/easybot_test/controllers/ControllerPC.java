@@ -20,7 +20,7 @@ public class ControllerPC {
                    @RequestParam double price, @RequestParam int amount,
                    @RequestParam String form) {
         if (!isDataValid(serial, brand, price, amount) || !isFormValid(form) ||
-            pcDao.isPresent(serial)) {
+                pcDao.isPresent(serial)) {
             return new PC();
         }
         return pcDao.save(new PC(serial, brand, price, amount, form));
@@ -34,5 +34,14 @@ public class ControllerPC {
     @GetMapping("/findById")
     public PC findById(int id) {
         return pcDao.findById(id);
+    }
+
+    @PostMapping("/update")
+    public PC update(@RequestParam int id, @RequestParam(required = false) Integer serial,
+                     @RequestParam(required = false) String brand, @RequestParam(required = false) Double price,
+                     @RequestParam(required = false) Integer amount, @RequestParam(required = false) String form) {
+        if (pcDao.findById(id) == null)
+            return new PC();
+        return pcDao.update(new PC(id, serial, brand, price, amount, form));
     }
 }

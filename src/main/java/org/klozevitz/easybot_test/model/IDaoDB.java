@@ -4,9 +4,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Transactional
 public interface IDaoDB<E> {
     E save(E e);
+    @Transactional
     E update(E e);
     List<E> findAll();
     E findById(int id);
