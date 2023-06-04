@@ -62,7 +62,7 @@
     <td>"/all"</td>
     <td>Get</td>
     <td></td>
-    <td>List(pc)</td>
+    <td>List(PC)</td>
   </tr>
   <tr>
     <td>findById</td>
@@ -77,5 +77,44 @@
     <td>Post</td>
     <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), String form (not required)</td>
     <td>PC (empty PC)</td>
+  </tr>
+</table>
+
+<h3>Сущность Laptop (path: "/laptop")</h3>
+<table>
+  <thead>
+    <td>Operation</td>
+    <td>Endpoint</td>
+    <td>Method</td>
+    <td>Parameters</td>
+    <td>Response Object</td>
+  </thead>
+  <tr>
+    <td>save</td>
+    <td>"/save"</td>
+    <td>Post</td>
+    <td>int serial, String brand, double price, int amount, int size</td>
+    <td>Laptop (empty Laptop)</td>
+  </tr>
+  <tr>
+    <td>findAll</td>
+    <td>"/all"</td>
+    <td>Get</td>
+    <td></td>
+    <td>List(Laptop)</td>
+  </tr>
+  <tr>
+    <td>findById</td>
+    <td>"/findById"</td>
+    <td>Get</td>
+    <td></td>
+    <td>Laptop (empty Laptop)</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>"/update"</td>
+    <td>Post</td>
+    <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), int size (not required)</td>
+    <td>Laptop (empty Laptop)</td>
   </tr>
 </table>
