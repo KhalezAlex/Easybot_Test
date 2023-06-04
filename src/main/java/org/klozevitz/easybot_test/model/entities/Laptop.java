@@ -8,7 +8,6 @@ import static org.klozevitz.easybot_test.util.Validations.isSizeValid;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "laptop_t")
@@ -26,6 +25,15 @@ public class Laptop {
     private Integer amount;
     @Column(name = "size", nullable = false)
     private Integer size;
+
+    public Laptop() {
+        this.id = -1;
+        this.serial = -1;
+        this.brand = "UNDEFINED";
+        this.price = -1.0;
+        this.amount = -1;
+        this.size = -1;
+    }
 
     public Laptop(Integer serial, String brand, Double price, Integer amount, Integer size) {
         this.serial = serial;

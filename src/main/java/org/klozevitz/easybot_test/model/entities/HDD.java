@@ -8,7 +8,6 @@ import static org.klozevitz.easybot_test.util.Validations.isVolumeValid;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "hdd_t")
@@ -26,6 +25,15 @@ public class HDD {
     private Integer amount;
     @Column(name = "volume", nullable = false)
     private Double volume;
+
+    public HDD() {
+        this.id = -1;
+        this.serial = -1;
+        this.brand = "UNDEFINED";
+        this.price = -1.0;
+        this.amount = -1;
+        this.volume = -1.0;
+    }
 
     public HDD(Integer serial, String brand, Double price, Integer amount, Double volume) {
         this.serial = serial;

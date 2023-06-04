@@ -11,7 +11,6 @@ import static org.klozevitz.easybot_test.util.Validations.isDiagValid;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "monitor_t")
@@ -29,6 +28,15 @@ public class Monitor {
     private Integer amount;
     @Column(name = "diag", nullable = false)
     private Double diag;
+
+    public Monitor() {
+        this.id = -1;
+        this.serial = -1;
+        this.brand = "UNDEFINED";
+        this.price = -1.0;
+        this.amount = -1;
+        this.diag = -1.0;
+    }
 
     public Monitor(Integer serial, String brand, Double price, Integer amount, Double diag) {
         this.serial = serial;
@@ -49,5 +57,17 @@ public class Monitor {
             setAmount(monitor.getAmount());
         if (monitor.getDiag() != null && isDiagValid(monitor.getDiag()))
             setDiag(monitor.getDiag());
+    }
+
+    @Override
+    public String toString() {
+        return "Monitor{" +
+                "id=" + id +
+                ", serial=" + serial +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                ", diag=" + diag +
+                '}';
     }
 }
