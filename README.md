@@ -55,7 +55,7 @@
     <td>"/save"</td>
     <td>Post</td>
     <td>int serial, String brand, double price, int amount, String form</td>
-    <td>PC (empty PC)</td>
+    <td>PC (default PC)</td>
   </tr>
   <tr>
     <td>findAll</td>
@@ -69,14 +69,14 @@
     <td>"/findById"</td>
     <td>Get</td>
     <td>int id</td>
-    <td>PC (empty PC)</td>
+    <td>PC (default PC)</td>
   </tr>
   <tr>
     <td>update</td>
     <td>"/update"</td>
     <td>Post</td>
     <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), String form (not required)</td>
-    <td>PC (empty PC)</td>
+    <td>PC (default PC)</td>
   </tr>
 </table>
 
@@ -94,7 +94,7 @@
     <td>"/save"</td>
     <td>Post</td>
     <td>int serial, String brand, double price, int amount, int size</td>
-    <td>Laptop (empty Laptop)</td>
+    <td>Laptop (default Laptop)</td>
   </tr>
   <tr>
     <td>findAll</td>
@@ -108,14 +108,14 @@
     <td>"/findById"</td>
     <td>Get</td>
     <td>int id</td>
-    <td>Laptop (empty Laptop)</td>
+    <td>Laptop (default Laptop)</td>
   </tr>
   <tr>
     <td>update</td>
     <td>"/update"</td>
     <td>Post</td>
     <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), int size (not required)</td>
-    <td>Laptop (empty Laptop)</td>
+    <td>Laptop (default Laptop)</td>
   </tr>
 </table>
 
@@ -133,7 +133,7 @@
     <td>"/save"</td>
     <td>Post</td>
     <td>int serial, String brand, double price, int amount, double diag</td>
-    <td>Monitor (empty Monitor)</td>
+    <td>Monitor (default Monitor)</td>
   </tr>
   <tr>
     <td>findAll</td>
@@ -147,14 +147,14 @@
     <td>"/findById"</td>
     <td>Get</td>
     <td>int id</td>
-    <td>Monitor (empty Monitor)</td>
+    <td>Monitor (default Monitor)</td>
   </tr>
   <tr>
     <td>update</td>
     <td>"/update"</td>
     <td>Post</td>
     <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), double diag (not required)</td>
-    <td>Monitor (empty Monitor)</td>
+    <td>Monitor (default Monitor)</td>
   </tr>
 </table>
 
@@ -172,7 +172,7 @@
     <td>"/save"</td>
     <td>Post</td>
     <td>int serial, String brand, double price, int amount, double volume</td>
-    <td>HDD (empty HDD)</td>
+    <td>HDD (default HDD)</td>
   </tr>
   <tr>
     <td>findAll</td>
@@ -186,13 +186,13 @@
     <td>"/findById"</td>
     <td>Get</td>
     <td>int id</td>
-    <td>HDD (empty HDD)</td>
+    <td>HDD (default HDD)</td>
   </tr>
   <tr>
     <td>update</td>
     <td>"/update"</td>
     <td>Post</td>
     <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), double volume (not required)</td>
-    <td>HDD (empty HDD)</td>
+    <td>HDD (default HDD)</td>
   </tr>
 </table>
