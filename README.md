@@ -57,4 +57,11 @@
     <td>int serial, String brand, double price, int amount, String form</td>
     <td>PC</td>
   </tr>
+  <tr>
+    <td>findAll</td>
+    <td>"/all"</td>
+    <td>Get</td>
+    <td></td>
+    <td>List<PC></td>
+  </tr>
 </table>
