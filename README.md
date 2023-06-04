@@ -64,4 +64,18 @@
     <td></td>
     <td>List(pc)</td>
   </tr>
+  <tr>
+    <td>findById</td>
+    <td>"/findById"</td>
+    <td>Get</td>
+    <td></td>
+    <td>PC</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>"/update"</td>
+    <td>Post</td>
+    <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), String form (not required)</td>
+    <td>PC</td>
+  </tr>
 </table>
