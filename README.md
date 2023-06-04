@@ -38,4 +38,5 @@
   </ul>
 </div>
 </br>
+<span>В качестве базы данных использовать in memory database, например H2</span>
 
