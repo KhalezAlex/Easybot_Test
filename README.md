@@ -118,3 +118,42 @@
     <td>Laptop (empty Laptop)</td>
   </tr>
 </table>
+
+<h3>Сущность Monitor (path: "/monitor")</h3>
+<table>
+  <thead>
+    <td>Operation</td>
+    <td>Endpoint</td>
+    <td>Method</td>
+    <td>Parameters</td>
+    <td>Response Object</td>
+  </thead>
+  <tr>
+    <td>save</td>
+    <td>"/save"</td>
+    <td>Post</td>
+    <td>int serial, String brand, double price, int amount, double diag</td>
+    <td>Monitor (empty Monitor)</td>
+  </tr>
+  <tr>
+    <td>findAll</td>
+    <td>"/all"</td>
+    <td>Get</td>
+    <td></td>
+    <td>List(Monitor)</td>
+  </tr>
+  <tr>
+    <td>findById</td>
+    <td>"/findById"</td>
+    <td>Get</td>
+    <td>int id</td>
+    <td>Monitor (empty Monitor)</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>"/update"</td>
+    <td>Post</td>
+    <td>int id, int serial (not required), String brand (not required), double price (not required), int amount (not required), double diag (not required)</td>
+    <td>Monitor (empty Monitor)</td>
+  </tr>
+</table>
