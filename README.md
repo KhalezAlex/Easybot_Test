@@ -68,7 +68,7 @@
     <td>findById</td>
     <td>"/findById"</td>
     <td>Get</td>
-    <td></td>
+    <td>int id</td>
     <td>PC (empty PC)</td>
   </tr>
   <tr>
@@ -107,7 +107,7 @@
     <td>findById</td>
     <td>"/findById"</td>
     <td>Get</td>
-    <td></td>
+    <td>int id</td>
     <td>Laptop (empty Laptop)</td>
   </tr>
   <tr>
