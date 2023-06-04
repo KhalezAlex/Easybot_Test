@@ -41,7 +41,7 @@
 
 </br>
 <h2>Описание API</h2>
-<h3>Сущность User</h3>
+<h3>Сущность PC (path: "/pc")</h3>
 <table>
   <thead>
     <td>Operation</td>
@@ -54,7 +54,7 @@
     <td>save</td>
     <td>"/save"</td>
     <td>Post</td>
-    <td>String name, String password, String email (not required)</td>
-    <td>User</td>
+    <td>int serial, String brand, double price, int amount, String form</td>
+    <td>PC</td>
   </tr>
 </table>
