@@ -62,6 +62,6 @@
     <td>"/all"</td>
     <td>Get</td>
     <td></td>
-    <td>List\<PC\></td>
+    <td>List(pc)</td>
   </tr>
 </table>
